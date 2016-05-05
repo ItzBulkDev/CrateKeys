@@ -1,0 +1,49 @@
+---
+#BASIC SETTINGS
+#---------------
+#Item Id For Key - THE ONE USED BELOW (131) IS A TRIPWIRE HOOK
+key: 131 
+#Crate ID (THIS SHOULD BE A BLOCK) THE ONE USED BELOW IS A SPONGE (19)
+crate: 19
+#---------------
+
+#FOR BROADCASTING USER OPENED A CRATE
+#---------------
+#Broadcast?
+broadcast: true
+
+#THE MESSAGE BROADCASTED 
+#USE {PLAYER} for player's name
+#USE {AMOUNT} for amount of items the player received
+#USE & to replace § (DO NOT USE §)
+broadcast-message: "&a+ {PLAYER} RECEIVED {AMOUNT} ITEMS FROM A CRATE!"
+#---------------
+
+
+#FOR RANDOMIZING
+#---------------
+#Randomize items?
+randomize: true
+#Minimum items outputted
+min-rand: 2
+#Maximum items outputted
+max-rand: 5
+#---------------
+
+#FOR NON-RANDOMIZING
+#---------------
+#IF RANDOMIZE IS DISABLED, THE AMOUNT OF ITEMS OUTPUTTED
+amount: 3
+#---------------
+
+#ITEMS OUTPUTTED
+#---------------
+#ENTER AS MANY ITEM IDs AS YOU WANT
+#Copy and paste a '  - "0"' and change the 0 to add even more
+Items:
+  - "0"
+  - "0"
+  - "0"
+  - "0"
+  
+  ...
