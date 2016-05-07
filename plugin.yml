@@ -1,5 +1,5 @@
 name: CrateKeys
-main: CrateKeys
+main: CrateKeys\Main
 author: Bulk
 version: 1.0
 api: 2.0.0
