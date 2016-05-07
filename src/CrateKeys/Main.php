@@ -14,7 +14,7 @@ use pocketmine\command\ConsoleCommandSender;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 
-class CrateKeys extends PluginBase implements Listener {
+class Main extends PluginBase implements Listener {
 
 public function onEnable(){
 $this->getServer()->getPluginManager()->registerEvents($this, $this);
