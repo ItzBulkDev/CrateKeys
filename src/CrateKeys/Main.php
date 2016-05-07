@@ -82,4 +82,5 @@ public function onCrateTap(PlayerInteractEvent $event){
 	}
 	}
 	}
+}
 				
