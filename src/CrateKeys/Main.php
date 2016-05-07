@@ -59,6 +59,7 @@ public function onCrateTap(PlayerInteractEvent $event){
 			$msg = $config->get("broadcast-message");
       $msg = str_replace("{PLAYER}", $player->getName(), $msg);
       $msg = str_replace("{AMOUNT}", $amount, $msg);
+      $msg = str_replace("&", "§", $msg);
       }
 				}
 			}
