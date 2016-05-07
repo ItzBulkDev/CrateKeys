@@ -28,7 +28,7 @@ public function onCrateTap(PlayerInteractEvent $event){
     $config = $this->getConfig();
 		$player = $event->getPlayer();
 		$key = $player->getInventory()->getItemInHand();
-		$crate = $event->getBlock();
+		$crate = $event->getBlock()->getId();
 		if($key == $config->get("key")){
 			if($crate == $config->get("Block")){
 			
