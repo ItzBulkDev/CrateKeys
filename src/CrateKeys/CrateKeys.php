@@ -1,6 +1,6 @@
 <?php
 
-namespace ItzBulkDev\CrateKeys;
+namespace CrateKeys;
 
 use pocketmine\Server;
 use pocketmine\Player;
