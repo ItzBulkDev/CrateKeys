@@ -13,6 +13,7 @@ use pocketmine\utils\Config;
 use pocketmine\command\ConsoleCommandSender;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
+use pocketmine\player\Inventory;
 
 class Main extends PluginBase implements Listener {
 
@@ -78,6 +79,7 @@ public function onCrateTap(PlayerInteractEvent $event){
                 $player->sendMessage(TextFormat::GREEN."You just received $keys keys!");
                 if($sender instanceof Player){
                 $player->sendMessage(TextFormat::GREEN."Sent $keys keys to $playerName");
+                return true;
                 }
 	}
 	}
