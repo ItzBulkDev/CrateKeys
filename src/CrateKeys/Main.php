@@ -70,7 +70,6 @@ public function onCrateTap(PlayerInteractEvent $event){
 		
 		public function onSendKeys(CommandSender $sender, Command $cmd, $label, array $args) {
         if(strtolower($cmd->getName()) === "key") {
-        if(isset($args[1])) {
         $config = $this->getConfig();
                 $key = $config->get("key");
                 $keys = $args[0];
@@ -80,10 +79,9 @@ public function onCrateTap(PlayerInteractEvent $event){
                 $player->sendMessage(TextFormat::GREEN."You just received $keys keys!");
                 if($sender instanceof Player){
                 $player->sendMessage(TextFormat::GREEN."Sent $keys keys to $playerName");
-                return true;
                 }
 	}
-	}
+	return true;
 	}
 }
 				
