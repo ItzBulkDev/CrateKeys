@@ -40,6 +40,8 @@ public function onCrateTap(PlayerInteractEvent $event){
 					$randomize = $this->getConfig()->get("Items");
 					$player->getInventory()->addItem(Item::get($randomize));
 					}
+					$player->sendMessage(TextFormat::GREEN."[CrateKeys] You received $amount items!");
+					$player->sendMessage(TextFormat::GREEN."[CrateKeys] Check Your inventory to see it!");
 				}
 					
 				//IF RANDOMIZE IS FALSE
@@ -48,9 +50,9 @@ public function onCrateTap(PlayerInteractEvent $event){
 				for($i = 1; $i <= $amount; $i++){
 					$items = $this->getConfig()->get("Items");
 					$player->getInventory()->addItem(Item::get($items));
-				
 					}
-					
+					$player->sendMessage(TextFormat::GREEN."[CrateKeys] You received $amount items!");
+					$player->sendMessage(TextFormat::GREEN."[CrateKeys] Check Your inventory to see it!");
 				}
 				
 			//IF BROADCAST IS TRUE
@@ -62,8 +64,7 @@ public function onCrateTap(PlayerInteractEvent $event){
       }
 				}
 			}
-			$player->sendMessage(TextFormat::GREEN."[CrateKeys] You received $amount items!");
-					$player->sendMessage(TextFormat::GREEN."[CrateKeys] Check Your inventory to see it!");
+			
 		}
 		
 		
