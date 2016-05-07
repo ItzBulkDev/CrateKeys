@@ -3,4 +3,12 @@ main: CrateKeys\Main
 author: Bulk
 version: 1.0
 api: 2.0.0
-
+commands:
+ key:
+  permission: key.command
+  description: Give player an amount of keys
+  usage: /key [amount] [player]
+permissions:
+    key.command:
+      default: op
+      description: Give player an amount of keys
