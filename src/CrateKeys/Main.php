@@ -63,6 +63,8 @@ public function onCrateTap(PlayerInteractEvent $event){
       $msg = str_replace("&", "§", $msg);
       $this->getServer()->broadcastMessage($msg);
       }
+      $i = Item::get($config->get("key"), 0, 1);
+      $player->getInventory()->removeItem($i);
 				}
 			}
 			
