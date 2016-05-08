@@ -52,7 +52,7 @@ public function onCrateTap(PlayerInteractEvent $event){
 			if($config->get("randomize") == false){
 			$amount = $config->get("amount");
 			$amount2 = $config->get("item-amount");
-			$items = array_slice($config->get("Items"), 0, $amount)
+			$items = array_slice($config->get("Items"), 0, $amount);
 			foreach ($items as $i) {
 				$item = Item::get($i); 
 				$item->setCount($amount2); 
