@@ -28,12 +28,17 @@ randomize: true
 min-rand: 2
 #Maximum items outputted
 max-rand: 5
+#Range for item count (for each item, It will be randomized within range given)
+item-amount-min: 1
+item-amount-max: 4
 #---------------
 
 #FOR NON-RANDOMIZING
 #---------------
 #IF RANDOMIZE IS DISABLED, THE AMOUNT OF ITEMS OUTPUTTED
 amount: 3
+#IF RANDOMIZE IS DISABLED, THE AMOUNT OF EACH ITEM GIVEN TO PLAYER (THE ITEM COUNT FOR EACH ITEM YOU SET)
+item-amount: 3
 #---------------
 
 #ITEMS OUTPUTTED
