@@ -30,17 +30,17 @@ public function onCrateTap(PlayerInteractEvent $event){
 		$key = $player->getInventory()->getItemInHand()->getId();
 		$crate = $event->getBlock()->getId();
 		if($key == $config->get("key")){
-			if($crate == $config->get("Block")){
+			if($crate == $config->get("crate")){
 			
 			
 			//IF RANDOMIZE IS TRUE
 			if($config->get("randomize") == true){
 			$amount = rand($config->get("min-rand"),$config->get("max-rand"));
 			$amount2 = rand($config->get("item-amount-min"),$config->get("item-amount-max"));
-			$rand = array_rand($this->getConfig()->get("Items"), $amount);
+			$rand = array_rand($config->get("Items"), $amount);
 			foreach ($rand as $i) {
-				$item = Item::get($i, 0, $amount2); 
-				$player->getInventory()->addItem(Item::get($i));
+				$item = Item::get($i, 0, $amount2);
+				$player->getInventory()->addItem($item);
 				
 			}
 					$player->sendMessage(TextFormat::GREEN."[CrateKeys] You received $amount items!");
