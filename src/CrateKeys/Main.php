@@ -40,7 +40,7 @@ public function onCrateTap(PlayerInteractEvent $event){
 			$rand = array_rand($this->getConfig()->get("Items"), $amount);
 			foreach ($rand as $i) {
 				$item = Item::get($i, 0, $amount2); 
-				$player->getInventory()->addItem($item);
+				$player->getInventory()->addItem(Item::get($i));
 				
 			}
 					$player->sendMessage(TextFormat::GREEN."[CrateKeys] You received $amount items!");
