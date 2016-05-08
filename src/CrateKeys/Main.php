@@ -61,6 +61,7 @@ public function onCrateTap(PlayerInteractEvent $event){
       $msg = str_replace("{PLAYER}", $player->getName(), $msg);
       $msg = str_replace("{AMOUNT}", $amount, $msg);
       $msg = str_replace("&", "§", $msg);
+      $this->getServer()->broadcastMessage($msg);
       }
 				}
 			}
@@ -68,20 +69,21 @@ public function onCrateTap(PlayerInteractEvent $event){
 		}
 		
 		
-		public function onSendKeys(CommandSender $sender, Command $cmd, $label, array $args) {
-        if(strtolower($cmd->getName()) === "key") {
-        $config = $this->getConfig();
+	public function onCommand(CommandSender $sender, Command $command, $label, array $args){
+		if(strtolower($command->getName('key'))){
+        	$config = $this->getConfig();
                 $key = $config->get("key");
                 $keys = $args[0];
                 $playerName = $args[1];
                 $player = $this->getServer()->getPlayer($playerName);
                 $player->getInventory()->addItem(Item::get($key));
                 $player->sendMessage(TextFormat::GREEN."You just received $keys keys!");
+                return true;
                 if($sender instanceof Player){
                 $player->sendMessage(TextFormat::GREEN."Sent $keys keys to $playerName");
+               	return true;
                 }
 	}
-	return true;
 	}
 }
 				
