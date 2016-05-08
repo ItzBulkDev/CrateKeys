@@ -75,10 +75,12 @@ public function onCrateTap(PlayerInteractEvent $event){
 		if(strtolower($command->getName('key'))){
         	$config = $this->getConfig();
                 $key = $config->get("key");
+               
                 $keys = $args[0];
+                $i = Item::get($config->get("key"), 0, $keys);
                 $playerName = $args[1];
                 $player = $this->getServer()->getPlayer($playerName);
-                $player->getInventory()->addItem(Item::get($key));
+                $player->getInventory()->addItem(Item::get($i));
                 $player->sendMessage(TextFormat::GREEN."You just received $keys keys!");
                 return true;
                 if($sender instanceof Player){
