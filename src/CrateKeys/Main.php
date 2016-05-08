@@ -38,8 +38,9 @@ public function onCrateTap(PlayerInteractEvent $event){
 			$amount = rand($config->get("min-rand"),$config->get("max-rand"));
 			$amount2 = rand($config->get("item-amount-min"),$config->get("item-amount-max"));
 			$rand = array_rand($config->get("Items"), $amount);
+			$itemarray = $config->get("Items");
 			foreach ($rand as $i) {
-				$item = Item::get($i, 0, $amount2);
+				$item = Item::get($itemarray[$i], 0, $amount2);
 				$player->getInventory()->addItem($item);
 				
 			}
