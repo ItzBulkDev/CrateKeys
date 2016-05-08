@@ -36,10 +36,11 @@ public function onCrateTap(PlayerInteractEvent $event){
 			//IF RANDOMIZE IS TRUE
 			if($config->get("randomize") == true){
 			$amount = rand($config->get("min-rand"),$config->get("max-rand"));
-			foreach ($this->getConfig()->get("Items") as $i) {
-			$rand = array_rand($this->getConfig()->get("Items"), 1);
-				$item = Item::get($rand); 
-				$item->setCount($amount); 
+			$amount2 = rand($config->get("item-amount-min"),$config->get("item-amount-max"));
+			$rand = array_rand($this->getConfig()->get("Items"), $amount);
+			foreach ($rand as $i) {
+				$item = Item::get($i); 
+				$item->setCount($amount2); 
 				$player->getInventory()->addItem($item);
 				
 			}
@@ -50,9 +51,11 @@ public function onCrateTap(PlayerInteractEvent $event){
 				//IF RANDOMIZE IS FALSE
 			if($config->get("randomize") == false){
 			$amount = $config->get("amount");
-			foreach ($this->getConfig()->get("Items") as $i) {
+			$amount2 = $config->get("item-amount");
+			$items = array_slice($config->get("Items"), 0, $amount)
+			foreach ($items as $i) {
 				$item = Item::get($i); 
-				$item->setCount($amount); 
+				$item->setCount($amount2); 
 				$player->getInventory()->addItem($item);
 				
 			}
