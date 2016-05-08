@@ -39,8 +39,7 @@ public function onCrateTap(PlayerInteractEvent $event){
 			$amount2 = rand($config->get("item-amount-min"),$config->get("item-amount-max"));
 			$rand = array_rand($this->getConfig()->get("Items"), $amount);
 			foreach ($rand as $i) {
-				$item = Item::get($i); 
-				$item->setCount($amount2); 
+				$item = Item::get($i, 0, $amount2); 
 				$player->getInventory()->addItem($item);
 				
 			}
@@ -54,8 +53,7 @@ public function onCrateTap(PlayerInteractEvent $event){
 			$amount2 = $config->get("item-amount");
 			$items = array_slice($config->get("Items"), 0, $amount);
 			foreach ($items as $i) {
-				$item = Item::get($i); 
-				$item->setCount($amount2); 
+				$item = Item::get($i, 0, $amount2);
 				$player->getInventory()->addItem($item);
 				
 			}
