@@ -36,10 +36,13 @@ public function onCrateTap(PlayerInteractEvent $event){
 			//IF RANDOMIZE IS TRUE
 			if($config->get("randomize") == true){
 			$amount = rand($config->get("min-rand"),$config->get("max-rand"));
-				for($i = 1; $i <= $amount; $i++){
-					$randomize = $this->getConfig()->get("Items");
-					$player->getInventory()->addItem(Item::get($randomize));
-					}
+			foreach ($this->getConfig()->get("Items") as $i) {
+			$rand = array_rand($this->getConfig()->get("Items"), 1);
+				$item = Item::get($rand); 
+				$item->setCount($amount); 
+				$player->getInventory()->addItem($item);
+				
+			}
 					$player->sendMessage(TextFormat::GREEN."[CrateKeys] You received $amount items!");
 					$player->sendMessage(TextFormat::GREEN."[CrateKeys] Check Your inventory to see it!");
 				}
@@ -47,10 +50,12 @@ public function onCrateTap(PlayerInteractEvent $event){
 				//IF RANDOMIZE IS FALSE
 			if($config->get("randomize") == false){
 			$amount = $config->get("amount");
-				for($i = 1; $i <= $amount; $i++){
-					$items = $this->getConfig()->get("Items");
-					$player->getInventory()->addItem(Item::get($items));
-					}
+			foreach ($this->getConfig()->get("Items") as $i) {
+				$item = Item::get($i); 
+				$item->setCount($amount); 
+				$player->getInventory()->addItem($item);
+				
+			}
 					$player->sendMessage(TextFormat::GREEN."[CrateKeys] You received $amount items!");
 					$player->sendMessage(TextFormat::GREEN."[CrateKeys] Check Your inventory to see it!");
 				}
