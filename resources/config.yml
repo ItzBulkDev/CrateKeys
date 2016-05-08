@@ -1,8 +1,8 @@
 ---
 #BASIC SETTINGS
 #---------------
-#Item Id For Key - THE ONE USED BELOW (131) IS A TRIPWIRE HOOK
-key: 131 
+#Item Id For Key - THE ONE USED BELOW (388) IS AN EMERALD
+key: 388
 #Crate ID (THIS SHOULD BE A BLOCK) THE ONE USED BELOW IS A SPONGE (19)
 crate: 19
 #---------------
