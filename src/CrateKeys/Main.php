@@ -27,7 +27,7 @@ $this->getServer()->getLogger()->info(TextFormat::BLUE."[CrateKeys] Enabled!");
 public function onCrateTap(PlayerInteractEvent $event){
     $config = $this->getConfig();
 		$player = $event->getPlayer();
-		$key = $event->getItem();
+		$key = $event->getItem()->getId();
 		$crate = $event->getBlock()->getId();
 		if($key == $config->get("key")){
 			if($crate == $config->get("crate")){
